@@ -2,6 +2,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    /* In case to user interfaces instead initialize classes*/
+    "strictPropertyInitialization": false,
+    /* end */
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

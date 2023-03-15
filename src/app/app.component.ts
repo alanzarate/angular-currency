@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ResponseCurrencyDto } from './dto/response.currency.dto';
+import { CurrencyService } from './service/currency.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +11,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'testing1';
+  title = "Arquitectura";
+ 
+  navLinks = [
+    {
+        label: 'Servicio',
+        link: '.',
+        index: 0
+    }, {
+        label: 'Historico',
+        link: './datasecond',
+        index: 1
+    },  
+  ];
+  activeLink = this.navLinks[0];
+
+  constructor(private router: Router){
+     
+  }
+
+   
+ 
 }

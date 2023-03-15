@@ -1,0 +1,27 @@
+
+<div class="main"> 
+    <form class="example-form" [formGroup]="currencyForm" (ngSubmit)="submit()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Moneda Origen</mat-label>
+        <input matInput placeholder="Ex. BOB" formControlName="from">
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Moneda Destino</mat-label>
+        <input matInput placeholder="Ex. BOB" formControlName="to">
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Monto</mat-label>
+        <input matInput placeholder="Ex. 1" formControlName="amount">
+      </mat-form-field>
+       
+  
+      <button mat-raised-button color="warn">Convertir</button>
+  
+      
+      
+    </form>
+    <span *ngIf="responseCurrencyDto != undefined" >Resultado: {{responseCurrencyDto.data.result}}</span>
+  </div>
+  
