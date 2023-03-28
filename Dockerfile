@@ -17,3 +17,4 @@ FROM nginx:1.17-alpine
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /usr/src/app/dist/testing1 /usr/share/nginx/html
 
+ 

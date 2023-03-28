@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -19,12 +19,16 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HistoricPaginationComponent } from './historic-pagination/historic-pagination.component';
 import {MatSelectModule} from '@angular/material/select'; 
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializeKeycloak } from './init/keycloak-init.factory';
+import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.component'
 @NgModule({
   declarations: [
     AppComponent,
     HistoricDataComponent,
     GetServiceComponent,
-    HistoricPaginationComponent
+    HistoricPaginationComponent,
+    ErrorcomponentComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +45,17 @@ import {MatSelectModule} from '@angular/material/select';
     MatTableModule,
     MatPaginatorModule,
     NgxPaginationModule,
-    MatSelectModule
+    MatSelectModule,
+    KeycloakAngularModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

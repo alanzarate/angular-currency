@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { KeycloakService } from 'keycloak-angular';
 import { ResponseCurrencyDto } from './dto/response.currency.dto';
 import { CurrencyService } from './service/currency.service';
 
@@ -26,8 +27,11 @@ export class AppComponent {
   ];
   activeLink = this.navLinks[0];
 
-  constructor(private router: Router){
+  constructor(private router: Router, private keycloakservice: KeycloakService){
      
+  }
+  logout(){
+    this.keycloakservice.logout("http://localhost:4200");
   }
 
    

@@ -1,0 +1,17 @@
+#GET https://api.apilayer.com/exchangerates_data/timeseries?start_date=2022-01-01&end_date=2022-02-01&symbols=USD,EUR&base=BOB
+#Content-Type: application/json
+#apikey: jqPB058UIYBeQoPFJNMfd73RtwJEjFcK
+
+
+#GET https://api.apilayer.com/exchangerates_data/symbols
+#Content-Type: application/json
+#apikey: jqPB058UIYBeQoPFJNMfd73RtwJEjFcK
+
+# both of endpoint are needed 
+
+#POST http://localhost:8080/realms/testing2/protocol/openid-connect/token
+#Content-Type: application/x-www-form-urlencoded
+
+#response_type=code&grant_type=client_credentials&client_id=backend&client_secret=J82JDRDUaIyMABThMlFGvQid1jsULeG5
+
+GET http://localhost:7777/api/v1/currency/all

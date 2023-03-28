@@ -16,9 +16,10 @@ export class CurrencyService {
   // observable measn async function and need to be observable 
   public convertCurrency(from: string, to: string, amount: number): Observable<ResponseCurrencyDto<QueryDto>>{
     
-    console.log("HERE IM USING ENVIRONMENT");
+    console.log("HERE IM USING ENVIRONMENT>>>>>>>>>>>>>>>>>>>>>>>>");
     console.log(environment.API_URL_TEST);
     console.log(environment.BACKEND_URL);
+    
 
     return this.http.get<any>(environment.BACKEND_URL+'/api/v1/currency/convert?from='+from+"&to="+to+"&amount="+amount);
   }
