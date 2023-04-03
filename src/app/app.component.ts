@@ -6,6 +6,7 @@ import { ResponseCurrencyDto } from './dto/response.currency.dto';
 import { CurrencyService } from './service/currency.service';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,7 +24,11 @@ export class AppComponent {
         label: 'Historico',
         link: './datasecond',
         index: 1
-    },  
+    },  {
+        label: 'TIme Series',
+        link: './timeserie',
+        index: 2
+    }
   ];
   activeLink = this.navLinks[0];
 

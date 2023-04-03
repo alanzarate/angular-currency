@@ -1,11 +1,14 @@
+#GET https://run.mocky.io/v3/d3766d5f-7335-4d8d-a9f8-760b2468d6bc
+
+
 #GET https://api.apilayer.com/exchangerates_data/timeseries?start_date=2022-01-01&end_date=2022-02-01&symbols=USD,EUR&base=BOB
 #Content-Type: application/json
 #apikey: jqPB058UIYBeQoPFJNMfd73RtwJEjFcK
 
 
-#GET https://api.apilayer.com/exchangerates_data/symbols
-#Content-Type: application/json
-#apikey: jqPB058UIYBeQoPFJNMfd73RtwJEjFcK
+GET https://api.apilayer.com/exchangerates_data/symbols
+Content-Type: application/json
+apikey: jqPB058UIYBeQoPFJNMfd73RtwJEjFcK
 
 # both of endpoint are needed 
 
@@ -14,4 +17,11 @@
 
 #response_type=code&grant_type=client_credentials&client_id=backend&client_secret=J82JDRDUaIyMABThMlFGvQid1jsULeG5
 
-GET http://localhost:7777/api/v1/currency/all
+#GET http://localhost:7777/api/v1/currency/all
+
+#GET http://localhost:7777/api/v1/currency/convert?from=USD&to=BOB&amount=150
+
+
+GET https://api.apilayer.com/fixer/latest?base=USD&symbols=EUR,GBP
+apikey: jqPB058UIYBeQoPFJNMfd73RtwJEjFcK
+Accept: application/xml

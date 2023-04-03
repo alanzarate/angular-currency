@@ -1,7 +1,6 @@
-import * as dotenv from 'dotenv'
-dotenv.config();
-
+ 
 export const environment = {
-    BACKEND_URL: "http://localhost:7777",
-    API_KEY:"123123123", 
-};
+    API_KEY: process.env['API_KEY_FRONTEND'] || 'THIS IS DEFAULT ONE' ,
+    BACKEND_URL: "http://localhost:4200/backend",
+    API_URL_TEST: "devKEY" ,
+    KEYCLOAK_URL: "http://192.168.100.206:8080" }

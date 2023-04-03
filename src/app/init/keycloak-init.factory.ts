@@ -1,10 +1,11 @@
 
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { environment } from 'src/environments/environment';
 export function initializeKeycloak(keycloak: KeycloakService) {
     return () =>
       keycloak.init({
         config: {
-          url: 'http://172.18.8.229:8080',
+          url: environment.KEYCLOAK_URL,
           realm: 'testing2',
           clientId: 'frontend'
         },

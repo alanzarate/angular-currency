@@ -29,6 +29,7 @@ export class GetServiceComponent {
 
   submit(){
     console.log(this.currencyForm.value);
+
     this.currencyService.convertCurrency(
       this.currencyForm.value.from,
       this.currencyForm.value.to,

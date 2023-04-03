@@ -21,14 +21,19 @@ import { HistoricPaginationComponent } from './historic-pagination/historic-pagi
 import {MatSelectModule} from '@angular/material/select'; 
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializeKeycloak } from './init/keycloak-init.factory';
-import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.component'
+import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.component';
+import { TimeserieComponent } from './timeserie/timeserie.component'
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
+ 
 @NgModule({
   declarations: [
     AppComponent,
     HistoricDataComponent,
     GetServiceComponent,
     HistoricPaginationComponent,
-    ErrorcomponentComponent
+    ErrorcomponentComponent,
+    TimeserieComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,9 @@ import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.compone
     MatPaginatorModule,
     NgxPaginationModule,
     MatSelectModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     {
